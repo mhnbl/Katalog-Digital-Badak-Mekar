@@ -7,7 +7,7 @@ import hashlib
 # 🔐 Autentikasi Sederhana
 # --------------------------
 st.set_page_config(page_title="Admin Panel UMKM", layout="wide")
-st.title("🔒 Admin Panel UMKM")
+st.title("Admin Panel UMKM")
 
 def hash_password(password):
     return hashlib.sha256(password.encode()).hexdigest()
@@ -81,7 +81,7 @@ if not selected.empty:
         no_hp = st.text_input("No HP", selected.iloc[0]['No._HP'])
         perizinan = st.text_input("Perizinan", selected.iloc[0]['Perizinan'])
 
-    if st.button("💾 Simpan Perubahan"):
+    if st.button("Simpan Perubahan"):
         df.loc[selected_index, 'Nama_Pemilik'] = nama_pemilik
         df.loc[selected_index, 'Jenis_Usaha'] = jenis_usaha
         df.loc[selected_index, 'Alamat'] = alamat
@@ -91,7 +91,7 @@ if not selected.empty:
         st.success("Data berhasil diperbarui.")
         st.rerun()
 
-    if st.button("🗑️ Hapus Data"):
+    if st.button("Hapus Data"):
         if st.warning("Yakin ingin menghapus data UMKM ini?"):
             df = df.drop(index=selected_index)
             save_data(df)
@@ -102,7 +102,7 @@ if not selected.empty:
 # ➕ Tambah UMKM Baru
 # --------------------------
 st.markdown("---")
-st.subheader("➕ Tambah UMKM Baru")
+st.subheader("Tambah UMKM Baru")
 
 with st.form("tambah_umkm"):
     nama_pemilik = st.text_input("Nama Pemilik")

@@ -3,7 +3,7 @@ import pandas as pd
 from st_aggrid import AgGrid, GridOptionsBuilder, GridUpdateMode
 
 st.set_page_config(page_title="Katalog UMKM", layout="wide")
-st.title("📋 Katalog UMKM Desa Badak Mekar")
+st.title("Katalog UMKM Desa Badak Mekar")
 
 @st.cache_data
 def load_data():
@@ -61,6 +61,6 @@ if not selected.empty:
     nomor = str(detail['No._HP']).replace(" ", "")
     if nomor.isdigit():
         link_wa = f"https://wa.me/{nomor}"
-        st.markdown(f"[📱 Hubungi via WhatsApp]({link_wa})", unsafe_allow_html=True)
+        st.markdown(f"[Hubungi via WhatsApp]({link_wa})", unsafe_allow_html=True)
 else:
     st.info("Klik salah satu baris untuk melihat detail UMKM.")
