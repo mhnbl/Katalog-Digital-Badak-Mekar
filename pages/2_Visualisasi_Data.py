@@ -26,14 +26,27 @@ with col1:
                   color_discrete_sequence=['#4a90e2'])
     st.plotly_chart(fig1, use_container_width=True)
 
+    with st.expander("See Explanation"):
+            st.write('Dari diagram lingkaran diatas, dapat dilihat:')
+            st.write('Lorem ipsum dolor sit amet consectetur adipiscing elit quisque faucibus ex sapien vitae pellentesque sem placerat in id cursus mi pretium tellus duis convallis tempus leo eu aenean sed diam urna tempor pulvinar vivamus fringilla lacus nec metus bibendum egestas.')
+        
 with col2:
     st.header("Perizinan UMKM")
     fig2 = px.pie(df, names='Perizinan', title="Status Perizinan",
                   hole=0.4, color_discrete_sequence=px.colors.sequential.Aggrnyl)
     st.plotly_chart(fig2, use_container_width=True)
 
+    with st.expander("See Explanation"):
+            st.write('Dari diagram lingkaran diatas, dapat dilihat:')
+            st.write('Lorem ipsum dolor sit amet consectetur adipiscing elit quisque faucibus ex sapien vitae pellentesque sem placerat in id cursus mi pretium tellus duis convallis tempus leo eu aenean sed diam urna tempor pulvinar vivamus fringilla lacus nec metus bibendum egestas.')
+     
 st.header("Jumlah UMKM per RT")
 rt_count = df['RT'].value_counts().reset_index()
 rt_count.columns = ['RT', 'Jumlah']
 fig3 = px.bar(rt_count, x='RT', y='Jumlah', color='RT', color_discrete_sequence=px.colors.qualitative.Set3)
 st.plotly_chart(fig3, use_container_width=True)
+
+with st.expander("See Explanation"):
+            st.write('Dari diagram lingkaran diatas, dapat dilihat:')
+            st.write('Lorem ipsum dolor sit amet consectetur adipiscing elit quisque faucibus ex sapien vitae pellentesque sem placerat in id cursus mi pretium tellus duis convallis tempus leo eu aenean sed diam urna tempor pulvinar vivamus fringilla lacus nec metus bibendum egestas.')
+     

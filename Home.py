@@ -18,8 +18,8 @@ def load_data():
 
 df = load_data()
 
-st.subheader(f"Total UMKM Terdata: 📦 {len(df)} UMKM")
-st.page_link("pages/1_Katalog_UMKM.py", label="📋 Lihat Katalog", icon="📄")
+st.subheader(f"Total UMKM Terdata: {len(df)} UMKM")
+st.page_link("pages/1_Katalog_UMKM.py", label="Lihat Katalog")
 # Buat dua kolom untuk dua visualisasi
 st.subheader("Visulisasi Data")
 col1, col2 = st.columns(2)
@@ -47,7 +47,7 @@ with col2:
     fig_jenis.update_traces(textinfo='none')
 
     st.plotly_chart(fig_jenis, use_container_width=True)
-st.page_link("pages/2_Visualisasi_Data.py", label="📊 Lihat Statistik", icon="📈")
+st.page_link("pages/2_Visualisasi_Data.py", label="Lihat Statistik")
 # Jenis usaha terbanyak
 most_common = df['Jenis_Usaha'].value_counts().idxmax()
 st.success(f"✨ Jenis usaha terbanyak: **{most_common}**")

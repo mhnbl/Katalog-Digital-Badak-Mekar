@@ -51,7 +51,7 @@ df = load_data()
 # --------------------------
 # 📋 Tabel Interaktif CRUD
 # --------------------------
-st.subheader("Data UMKM (Interaktif)")
+st.subheader("Data UMKM")
 
 gb = GridOptionsBuilder.from_dataframe(df)
 gb.configure_selection(selection_mode="single", use_checkbox=True)

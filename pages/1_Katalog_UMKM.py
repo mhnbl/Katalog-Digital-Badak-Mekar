@@ -14,8 +14,8 @@ def load_data():
 df = load_data()
 
 # Ekstrak RT jadi string
-df['RT'] = df['No._RT'].astype(str)
-
+df['RT'] = df['No._RT'].fillna(0).astype(int).astype(str).str.zfill(2)
+df = df.drop(columns=['No._RT'])  # <- Hapus kolom aslinya
 # Sidebar Filter
 st.sidebar.header("🔍 Filter UMKM")
 jenis_filter = st.sidebar.multiselect("Jenis Usaha", sorted(df['Jenis_Usaha'].unique()))
@@ -43,9 +43,17 @@ response = AgGrid(
     theme="streamlit"
 )
 
+# ⬇️ Tombol download
+st.download_button(
+    label="Download Data CSV",
+    data=filtered.to_csv(index=False).encode("utf-8"),
+    file_name="UMKM_Badak_Mekar_filtered.csv",
+    mime="text/csv"
+)
+
 # Detail UMKM
 selected = pd.DataFrame(response['selected_rows'])
-st.subheader("Detail UMKM Terpilih")
+st.subheader("Detail UMKM")
 
 if not selected.empty:
     detail = selected.iloc[0]
