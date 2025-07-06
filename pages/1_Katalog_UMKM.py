@@ -3,7 +3,7 @@ import pandas as pd
 from st_aggrid import AgGrid, GridOptionsBuilder, GridUpdateMode
 
 st.set_page_config(page_title="Katalog UMKM", layout="wide")
-st.title("📋 Katalog UMKM Desa Badak Mekar")
+st.title("Katalog UMKM Desa Badak Mekar")
 
 @st.cache_data
 def load_data():
