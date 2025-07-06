@@ -2,7 +2,8 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
-st.set_page_config(page_title="Beranda - UMKM Badak Mekar", layout="wide")
+st.set_page_config(page_title="Beranda - UMKM Badak Mekar", layout="wide",page_icon="kukar.png")
+
 
 st.title("Katalog Digital UMKM Desa Badak Mekar")
 st.markdown("""
