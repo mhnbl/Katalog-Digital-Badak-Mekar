@@ -4,7 +4,7 @@ import plotly.express as px
 
 st.set_page_config(page_title="Beranda - UMKM Badak Mekar", layout="wide")
 
-st.title("Katalog Digital UMKM Desa Badak Mekar testt")
+st.title("Katalog Digital UMKM Desa Badak Mekar")
 st.markdown("""
 Selamat datang di katalog digital UMKM Desa **Badak Mekar**.  
 Website ini menyajikan data UMKM lokal untuk mendukung promosi dan pengembangan ekonomi desa.
