@@ -98,7 +98,7 @@ st.download_button(
 # Detail UMKM Terpilih
 # -----------------------------
 selected = pd.DataFrame(response['selected_rows'])
-st.subheader("Detail UMKM Terpilih")
+st.subheader("Detail UMKM Yang Terpilih")
 
 if not selected.empty:
     detail = selected.iloc[0]
