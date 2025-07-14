@@ -201,3 +201,47 @@ with st.form("tambah_umkm"):
             st.rerun()
         else:
             st.error("Harap isi semua kolom wajib.")
+
+# --------------------------
+# 🔁 Tombol Push ke GitHub
+# --------------------------
+import base64
+import requests
+
+st.markdown("---")
+st.subheader("Update Data ke GitHub")
+
+def push_to_github(file_path, repo, token, github_path, commit_message="Update data UMKM"):
+    api_url = f"https://api.github.com/repos/{repo}/contents/{github_path}"
+
+    with open(file_path, "rb") as f:
+        content = f.read()
+        encoded_content = base64.b64encode(content).decode("utf-8")
+
+    # Cek SHA file sebelumnya
+    response = requests.get(api_url, headers={"Authorization": f"token {token}"})
+    if response.status_code == 200:
+        sha = response.json().get("sha")
+    else:
+        sha = None
+
+    data = {
+        "message": commit_message,
+        "content": encoded_content,
+        "branch": "main"  # Ganti jika menggunakan branch lain
+    }
+    if sha:
+        data["sha"] = sha
+
+    r = requests.put(api_url, headers={"Authorization": f"token {token}"}, json=data)
+    return r.status_code in [200, 201]
+
+if st.button("Update ke GitHub Sekarang"):
+    token = st.secrets["github_token"]
+    repo = st.secrets["github_repo"]
+    github_path = st.secrets["github_file_path"]
+
+    if push_to_github(DATA_FILE, repo, token, github_path):
+        st.success("✅ Data berhasil di-push ke GitHub.")
+    else:
+        st.error("❌ Gagal mengunggah data ke GitHub. Periksa konfigurasi.")
