@@ -110,11 +110,11 @@ if not selected.empty:
         f"""
         <div style="padding: 20px; background-color: rgba(240,240,240,0.85); 
                     border-left: 5px solid #2a9d8f; border-radius: 8px; margin-bottom: 1rem;">
-            <p style="margin: 0 0 6px 0; font-size: 16px;"><strong>Nama Pemilik:</strong> {detail['Nama Pemilik Usaha']}</p>
-            <p style="margin: 0 0 6px 0;"><strong>Jenis Usaha:</strong> {detail['Jenis Usaha']}</p>
-            <p style="margin: 0 0 6px 0;"><strong>Alamat:</strong> {detail['Alamat']} (RT {detail['RT']})</p>
-            <p style="margin: 0 0 6px 0;"><strong>No HP:</strong> {detail['No. HP']}</p>
-            <p style="margin: 0 0 6px 0;"><strong>Status Perizinan:</strong> {detail['Perizinan']}</p>
+            <p style="color: black; margin: 0 0 6px 0; font-size: 16px;"><strong>Nama Pemilik:</strong> {detail['Nama Pemilik Usaha']}</p>
+            <p style="color: black; margin: 0 0 6px 0;"><strong>Jenis Usaha:</strong> {detail['Jenis Usaha']}</p>
+            <p style="color: black; margin: 0 0 6px 0;"><strong>Alamat:</strong> {detail['Alamat']} (RT {detail['RT']})</p>
+            <p style="color: black; margin: 0 0 6px 0;"><strong>No HP:</strong> {detail['No. HP']}</p>
+            <p style="color: black; margin: 0 0 6px 0;"><strong>Status Perizinan:</strong> {detail['Perizinan']}</p>
             {f'<a href="{link_wa}" target="_blank" style="text-decoration:none;"><button style="margin-top:10px; background-color:#25D366; color:white; padding:8px 12px; border:none; border-radius:4px;">Hubungi via WhatsApp</button></a>' if link_wa else ''}
         </div>
         """,

@@ -52,7 +52,7 @@ st.markdown("""
         height: 150px;
         padding: 20px;
         border-radius: 10px;
-        background-color: rgba(240, 240, 240, 0.7); /* transparan abu-abu terang */
+        background-color: rgba(240, 240, 240, 0.8); /* transparan abu-abu terang */
         box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
         display: flex;
         flex-direction: column;
@@ -118,7 +118,7 @@ with col3:
 st.markdown(
     """
     <div style="padding: 20px; background-color: rgba(245, 245, 245, 0.8); border-left: 5px solid #264653; border-radius: 6px; margin-top: 10px;">
-        <p style="margin: 0 0 10px 0; font-size: 15px;">
+        <p style="margin: 0 0 10px 0; font-size: 15px;color: black;">
         Website ini merupakan hasil dari program kerja <strong>Kuliah Kerja Nyata (KKN)</strong> dengan fokus pada <strong>digitalisasi data UMKM lokal</strong> di Desa Badak Mekar. Tujuan utamanya adalah menyusun dan menyajikan informasi pelaku usaha mikro secara lebih tertata, interaktif, dan mudah diakses oleh semua pihak yang berkepentingan.
         </p>
 
@@ -129,8 +129,8 @@ st.markdown(
 st.markdown(
     """
     <div style="padding: 20px; background-color: rgba(245, 245, 245, 0.8); border-left: 5px solid #264653; border-radius: 6px; margin-top: 10px;">
-        <p style="font-size: 15px; margin-bottom: 5px;"><strong>Melalui platform ini, Anda dapat menemukan:</strong></p>
-        <ul style="font-size: 15px; padding-left: 20px; margin-top: 0;">
+        <p style="color: black;font-size: 15px; margin-bottom: 5px;"><strong>Melalui platform ini, Anda dapat menemukan:</strong></p>
+        <ul style="color: black; font-size: 15px; padding-left: 20px; margin-top: 0;">
             <li>Data lengkap UMKM seperti nama usaha, jenis produk, lokasi, tahun berdiri, dan status perizinan</li>
             <li>Visualisasi statistik dan persebaran pelaku usaha di wilayah desa</li>
             <li>Fitur pencarian dan penyaringan berdasarkan kategori tertentu</li>
@@ -143,7 +143,7 @@ st.markdown(
 st.markdown(
     """
     <div style="padding: 20px; background-color: rgba(245, 245, 245, 0.8); border-left: 5px solid #264653; border-radius: 6px; margin-top: 10px;">
-        <p style="margin-top: 10px; font-size: 14px; color: #666;">
+        <p style="color: black;margin-top: 10px; font-size: 14px; color: #666;">
         Informasi yang disediakan ditujukan untuk membantu pemerintah desa, pelaku usaha, dan masyarakat umum dalam <strong>perencanaan pengembangan ekonomi lokal</strong> berbasis data. Harapannya, sistem ini dapat menjadi langkah awal menuju desa yang lebih <em>informatif</em>, <em>inovatif</em>, dan <em>berdaya saing</em>.
         </p>
     </div>

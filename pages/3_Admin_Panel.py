@@ -228,7 +228,7 @@ def push_to_github(file_path, repo, token, github_path, commit_message="Update d
     data = {
         "message": commit_message,
         "content": encoded_content,
-        "branch": "main"  # Ganti jika menggunakan branch lain
+        "branch": "main"
     }
     if sha:
         data["sha"] = sha
@@ -242,6 +242,17 @@ if st.button("Update ke GitHub Sekarang"):
     github_path = st.secrets["github_file_path"]
 
     if push_to_github(DATA_FILE, repo, token, github_path):
-        st.success("✅ Data berhasil di-push ke GitHub.")
+        st.success("✅ Data berhasil diunggah ke GitHub (database).")
     else:
         st.error("❌ Gagal mengunggah data ke GitHub. Periksa konfigurasi.")
+
+st.markdown(
+    """
+    <div style="padding: 20px; background-color: rgba(245, 245, 245, 0.8); border-left: 5px solid #264653; border-radius: 6px; margin-top: 10px;">
+        <p style="color: black; font-size: 14px; color: #666;">Tombol ini digunakan untuk mengunggah data UMKM (CSV) ke GitHub.</p>  
+        <p style="color: black; font-size: 14px; color: #666;">GitHub berfungsi sebagai tempat penyimpanan utama data.</p>
+        <p style="color: black; font-size: 14px; color: #666;">Tekan tombol ini setelah melakukan perubahan data agar tersimpan permanen.</p>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
