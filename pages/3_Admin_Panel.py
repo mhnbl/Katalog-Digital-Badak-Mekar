@@ -9,20 +9,24 @@ import hashlib
 st.set_page_config(page_title="Admin Panel UMKM", layout="wide", page_icon="kukar.png")
 st.title("Admin Panel UMKM")
 
+# Fungsi untuk meng-hash password
 def hash_password(password):
     return hashlib.sha256(password.encode()).hexdigest()
 
-# Ganti username dan password sesuai kebutuhan
-ADMIN_USERNAME = "admin"
-ADMIN_PASSWORD_HASH = hash_password("12345")  # Ganti password di sini
+# Ambil kredensial dari secrets
+ADMIN_USERNAME = st.secrets["admin"]["username"]
+ADMIN_PASSWORD_HASH = st.secrets["admin"]["password_hash"]
 
+# Cek login session
 if "logged_in" not in st.session_state:
     st.session_state.logged_in = False
 
+# Form login
 if not st.session_state.logged_in:
     st.subheader("Login Admin")
     username = st.text_input("Username")
     password = st.text_input("Password", type="password")
+
     if st.button("Login"):
         if username == ADMIN_USERNAME and hash_password(password) == ADMIN_PASSWORD_HASH:
             st.session_state.logged_in = True
