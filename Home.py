@@ -131,8 +131,8 @@ st.markdown(
     <div style="padding: 20px; background-color: rgba(245, 245, 245, 0.8); border-left: 5px solid #264653; border-radius: 6px; margin-top: 10px;">
         <p style="color: black;font-size: 15px; margin-bottom: 5px;"><strong>Melalui platform ini, Anda dapat menemukan:</strong></p>
         <ul style="color: black; font-size: 15px; padding-left: 20px; margin-top: 0;">
-            <li>Data lengkap UMKM seperti nama usaha, jenis produk, lokasi, tahun berdiri, dan status perizinan</li>
-            <li>Visualisasi statistik dan persebaran pelaku usaha di wilayah desa</li>
+            <li>Data lengkap UMKM seperti nama pemilik usaha, jenis usaha, alamat, no.telepon, dan status perizinan</li>
+            <li>Visualisasi statistik guna menadapatkan gambaran dan insight tentang kondisi umkm di wilayah desa</li>
             <li>Fitur pencarian dan penyaringan berdasarkan kategori tertentu</li>
         </ul>
     </div>
